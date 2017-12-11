@@ -11,6 +11,9 @@ filmRouter.get('/api/films', function(req, res){
    res.json(films);
 })
 
+filmRouter.get('/api/films/:id', function(req, res){
+   res.json(films[req.params.id]);
+})
 
 module.exports = filmRouter;
 //
