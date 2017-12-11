@@ -5,6 +5,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static('client/build'));
+app.use(require("./controllers/index"));
+app.use(require("./controllers/films"));
+
 
 app.listen(3000, function () {
   console.log('App running on port '+this.address().port);
