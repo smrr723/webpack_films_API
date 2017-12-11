@@ -7,13 +7,28 @@ var Review = require('../client/src/models/review');
 var express = require('express');
 var filmRouter = new express.Router();
 
+
 filmRouter.get('/api/films', function(req, res){
    res.json(films);
 })
 
+filmRouter.put('/:id', function(req, res){
+   films[req.params.id] = req.body.film;
+   res.json(films);
+})
+
+filmRouter.post('/', function(req, res){
+   films.push(req.body.film);
+   res.json(films);
+})
+
+
+
 filmRouter.get('/api/films/:id', function(req, res){
    res.json(films[req.params.id]);
 })
+
+
 
 module.exports = filmRouter;
 //
