@@ -22,13 +22,14 @@ filmRouter.post('/', function(req, res){
    res.json(films);
 })
 
-
-
 filmRouter.get('/api/films/:id', function(req, res){
    res.json(films[req.params.id]);
 })
 
-
+filmRouter.delete('/:id', function(req, res){
+   films.splice(req.params.id, 1);
+   res.json(films);
+});
 
 module.exports = filmRouter;
 //
