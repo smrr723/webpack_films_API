@@ -8,7 +8,7 @@ var express = require('express');
 var filmRouter = new express.Router();
 
 filmRouter.get('/api/films', function(req, res){
-   res.json({data: "Hello there, testing"});
+   res.json(films);
 })
 
 
